@@ -15,4 +15,4 @@ on:
 
 jobs:
   call-workflow:
-    uses: mlubej/github-actions-test/.github/workflows/reusable_workflow.yml@${{ env.CHECKOUT_BRANCH }}
+    uses: mlubej/github-actions-test/.github/workflows/reusable_workflow.yml@${{env.CHECKOUT_BRANCH}}
