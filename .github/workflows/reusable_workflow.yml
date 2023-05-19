@@ -16,7 +16,16 @@ jobs:
         with:
           ref: ${{ env.CHECKOUT_BRANCH }}
 
-      - name: test action
+      - name: Echo branch name
         run: |
           echo "running on develop"
           echo ${ls -l ./}
+
+      - name: List Files
+        id: list-files
+        uses: mirko-felice/list-files-action@v3.0.1
+        with:
+          repo: ${{ github.repository }}
+          ref: ${{ github.ref }}
+          path: "."
+          ext: "*"
