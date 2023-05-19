@@ -1,0 +1,18 @@
+name: Call a reusable workflow
+
+env:
+  # The only way to simulate if-else statement
+  CHECKOUT_BRANCH: ${{ github.event_name == 'schedule' && 'develop' || github.ref }}
+
+on:
+  push:
+    branches:
+      - "main"
+      - "develop"
+  schedule:
+    # Schedule events are triggered by whoever last changed the cron schedule
+    - cron: "* * * * *"
+
+jobs:
+  call-workflow:
+    uses: mlubej/github-actions-test/.github/workflows/reusable_workflow.yml@${{ env.CHECKOUT_BRANCH }}

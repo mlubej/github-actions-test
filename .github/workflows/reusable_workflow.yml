@@ -1,0 +1,13 @@
+name: Reusable workflow example
+
+on:
+  workflow_call:
+
+jobs:
+  my-custom-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test action
+        run: |
+          echo "running on master"
+          ls -l ./
