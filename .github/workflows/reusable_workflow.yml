@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: test action
         run: |
-          echo "running on master"
+          echo "running on develop"
           ls -l ./
