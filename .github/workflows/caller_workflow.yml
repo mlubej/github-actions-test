@@ -2,7 +2,7 @@ name: Call a reusable workflow
 
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/15 * * * *"
 
 jobs:
   call-workflow:
