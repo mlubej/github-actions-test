@@ -25,6 +25,6 @@ jobs:
         uses: mirko-felice/list-files-action@v3.0.1
         with:
           repo: ${{ github.repository }}
-          ref: ${{ github.ref }}
+          ref: ${{ env.CHECKOUT_BRANCH }}
           path: "."
-          ext: "*"
+          ext: ".txt"
