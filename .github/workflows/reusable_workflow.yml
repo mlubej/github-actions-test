@@ -18,8 +18,7 @@ jobs:
 
       - name: Echo branch name
         run: |
-          echo "running on develop"
-          echo ${ls -l ./}
+          echo "running on develop ${{ env.CHECKOUT_BRANCH }}"
 
       - name: List Files
         id: list-files
