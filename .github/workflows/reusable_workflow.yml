@@ -16,15 +16,9 @@ jobs:
         with:
           ref: ${{ env.CHECKOUT_BRANCH }}
 
-      - name: Echo branch name
+      - name: Echo branch name and list files
         run: |
-          echo "running on develop ${{ env.CHECKOUT_BRANCH }}"
-
-      - name: List Files
-        id: list-files
-        uses: mirko-felice/list-files-action@v3.0.1
-        with:
-          repo: ${{ github.repository }}
-          ref: ${{ env.CHECKOUT_BRANCH }}
-          path: "."
-          ext: ".txt"
+          echo "running github-action on develop"
+          echo "checked out branch: ${{ env.CHECKOUT_BRANCH }}"
+          echo "list checked out files: below"
+          python -c 'import os; os.system("ls -l ./")'
