@@ -1,9 +1,5 @@
 name: Reusable workflow example
 
-env:
-  # The only way to simulate if-else statement
-  CHECKOUT_BRANCH: ${{ github.event_name == 'schedule' && 'develop' || github.ref }}
-
 on:
   workflow_call:
 
@@ -11,11 +7,6 @@ jobs:
   my-custom-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ env.CHECKOUT_BRANCH }}
-
       - name: Echo branch name and list files
         run: |
           echo "running github-action on main"
