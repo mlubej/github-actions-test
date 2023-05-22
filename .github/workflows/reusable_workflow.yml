@@ -1,9 +1,5 @@
 name: Reusable workflow example
 
-env:
-  # The only way to simulate if-else statement
-  CHECKOUT_BRANCH: ${{ github.event_name == 'schedule' && 'develop' || github.ref }}
-
 on:
   workflow_call:
 
@@ -14,11 +10,11 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
         with:
-          ref: ${{ env.CHECKOUT_BRANCH }}
+          ref: ${{ github.ref }}
 
       - name: Echo branch name and list files
         run: |
           echo "running github-action on develop"
-          echo "checked out branch: ${{ env.CHECKOUT_BRANCH }}"
+          echo "checked out branch: ${{ github.ref }}"
           echo "list checked out files: below"
           python -c 'import os; os.system("ls -l ./")'
