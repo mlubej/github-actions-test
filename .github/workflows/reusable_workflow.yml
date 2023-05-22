@@ -10,6 +10,6 @@ jobs:
       - name: Echo branch name and list files
         run: |
           echo "running github-action on main"
-          echo "checked out branch: ${{ env.CHECKOUT_BRANCH }}"
+          echo "checked out branch: ${{ github.ref }}"
           echo "list checked out files: below"
           python -c 'import os; os.system("ls -l ./")'
