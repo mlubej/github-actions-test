@@ -1,0 +1,10 @@
+stages:
+  - test
+
+my-custom-job:
+  stage: test
+  image: ubuntu-latest
+  script:
+  run: >
+    echo "running CI on develop"
+    echo "$CI_JOB_TOKEN"
