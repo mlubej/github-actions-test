@@ -27,7 +27,7 @@ jobs:
       - name: Mirror + trigger CI
         uses: SvanBoxel/gitlab-mirror-and-ci-action@master
         with:
-            args: "https://git.sinergise.com/eo/github-actions-test.git"
+            args: "https://git.sinergise.com/eo/github-actions-test/"
         env:
             FORCE_PUSH: "true"
             GITLAB_HOSTNAME: "git.sinergise.com"
