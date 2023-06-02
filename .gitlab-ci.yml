@@ -4,7 +4,6 @@ stages:
 my-custom-job:
   stage: test
   image: ubuntu-latest
-  script:
-  run: >
+  script: >
     echo "running CI on develop"
     echo "$CI_JOB_TOKEN"
